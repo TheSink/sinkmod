@@ -4,6 +4,8 @@
 
 Documentation for Sinkmod, how to use it's in-game tools, creating maps, etc. As well as this, full documentation of the Lua API and examples are available.
 
+**This repo contains no source code for the game itself.**
+
 ### What is Sinkmod?
 
 Sinkmod is a project to create a game *sorta* like Garry's Mod but in Unreal Engine 4. The following features are either working or in progress:
