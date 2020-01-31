@@ -5,6 +5,7 @@ Author: TheSinkGod
 Updated: January 22 2020
 Description: This script is to be used on the Flat map, and creates a set of randomly positioned crates above the surface.
 Intended Version: a0.0.3.0
+hmm
 
 --]]
 
