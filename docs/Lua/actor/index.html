@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TheSinkGod">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Actor Object - Sinkmod Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Actor Object";
+    var mkdocs_page_input_path = "Lua\\actor.md";
+    var mkdocs_page_url = "/sinkmod/Lua/actor/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sinkmod Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Sinkmod Documentation</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lua</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Actor Object</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#actor-object">Actor Object</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#functions">Functions</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sinkmod Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Lua &raquo;</li>
+        
+      
+    
+    <li>Actor Object</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="actor-object">Actor Object</h1>
+<p>The Actor object is returned when you spawn an actor using any spawn functions. It is an array of functions that can be run on the actor to modify or obtain information.</p>
+<h2 id="functions">Functions</h2>
+<h3 id="actor-data">Actor Data</h3>
+<pre><code class="lua">:GetActorName()
+</code></pre>
+
+<p>Returns the name of the actor. Useful when calling an actor by name or locating it in-game.</p>
+<h3 id="transformations">Transformations</h3>
+<pre><code class="lua">:GetTransform()
+</code></pre>
+
+<p>Returns the actor's location, rotation, and scale.</p>
+<pre><code class="lua">:Move(vector Location, bool Sweep, bool Teleport)
+</code></pre>
+
+<p>Moves a spawned actor to a new location.
+If <code>Sweep</code> is true, the actor will sweep to the new location triggering any collision listener along the path.
+If <code>Teleport</code> is true, the actor's current physics state and velocity will persist to the new location.</p>
+<pre><code class="lua">:Rotate(vector Rotation)
+</code></pre>
+
+<p>Rotates an actor with the specified pitch, roll, and yaw (X,Y,Z).</p>
+<pre><code class="lua">:Scale(vector Scale)
+</code></pre>
+
+<p>Sets the world scale of the actor to the specified vector.</p>
+<h3 id="physics">Physics</h3>
+<pre><code class="lua">:SetSimulatePhysics(bool Enabled)
+</code></pre>
+
+<p>Sets whether or not the actor should simulate physics. This is the easiest way to freeze an object and prevent it from moving.</p>
+<pre><code class="lua">:GetMassScale()
+Returns: vector Scale
+</code></pre>
+
+<p>Gets the current mass scale (weight).</p>
+<pre><code class="lua">:SetMassScale(vector Scale)
+</code></pre>
+
+<p>Modifies the mass scale of the actor. Can make it heavier or lighter than the default weight.</p>
+<pre><code class="lua">:GetCollisionEnabled()
+Returns: bool Enabled
+</code></pre>
+
+<p>Returns whether or not collision is currently enabled on the actor or not.</p>
+<pre><code class="lua">:SetCollisionEnabled(bool Enabled)
+</code></pre>
+
+<p>Sets whether or not collision on the actor is enabled.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Setting the collision state of the object to false when unfrozen will cause it to fall through the ground if gravity is not modified. If this not the intended behavior, make sure the object is unable to move before collision is set to false. Otherwise, change the collision type to only collide with the world or other types of objects.</p>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Sinkmod Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

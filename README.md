@@ -8,6 +8,8 @@ Documentation for Sinkmod, how to use it's in-game tools, creating maps, etc. As
 
 **This repo contains no source code for the game itself.**
 
+Docs are available at: https://thesink.github.io/sinkmod/
+
 ### What is Sinkmod?
 
 Sinkmod is a project to create a game *sorta* like Garry's Mod but in Unreal Engine 4. The following features are either working or in progress:
