@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TheSinkGod">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Actor Class - Sinkmod Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Actor Class";
+    var mkdocs_page_input_path = "Lua_Classes\\actor.md";
+    var mkdocs_page_url = "/sinkmod/Lua_Classes/actor/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Sinkmod Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lua Classes</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Actor Class</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#actor-class">Actor Class</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#functions">Functions</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../sound/">Sound Class</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lua Examples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../Lua_Examples/crate_random/">Random Crates</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../Lua_Examples/eas_tone/">EAS Tone</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Sinkmod Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Lua Classes &raquo;</li>
+        
+      
+    
+    <li>Actor Class</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="actor-class">Actor Class</h1>
+<p>The Actor class is returned when you spawn an actor using any spawn functions. It is an array of functions that can be run on the actor to modify or obtain information.</p>
+<h2 id="functions">Functions</h2>
+<h3 id="actor-data">Actor Data</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Function</th>
+<th align="left">Arguments/Returns</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>:GetActorName()</code></td>
+<td align="left"><code>string Name</code></td>
+<td align="left">Returns the name of the specified actor. Useful when calling an actor by name or locating it in-game.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="transformations">Transformations</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Function</th>
+<th align="left">Arguments/Returns</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>:GetTransform()</code></td>
+<td align="left"><code>vector Location</code><br><code>vector Rotation</code><br><code>vector Scale</code></td>
+<td align="left">Returns the location, rotation, and scale of the actor.</td>
+</tr>
+<tr>
+<td align="left"><code>:Move()</code></td>
+<td align="left"><code>vector Location</code><br><code>*bool Sweep</code><br><code>*bool Teleport</code></td>
+<td align="left">Moves a spawned actor to a new location.<br>If sweep is true, collision listeners along the path to the new location will be triggered.<br>If teleport is true, velocity will be preserved to the new location.</td>
+</tr>
+<tr>
+<td align="left"><code>:Rotate()</code></td>
+<td align="left"><code>vector Rotation</code></td>
+<td align="left">Rotates and actor with the specified pitch (X), roll (Y), and yaw (Z).</td>
+</tr>
+<tr>
+<td align="left"><code>:Scale()</code></td>
+<td align="left"><code>vector Scale</code></td>
+<td align="left">Sets the world scale of the actor to the specified scale.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="physics">Physics</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Function</th>
+<th align="left">Arguments/Returns</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>:GetMassScale()</code></td>
+<td align="left"><code>vector MassScale</code></td>
+<td align="left">Returns the current mass scale (physical weight).</td>
+</tr>
+<tr>
+<td align="left"><code>:SetMassScale()</code></td>
+<td align="left"><code>vector MassScale</code></td>
+<td align="left">Sets the mass scale of the actor. Changes the physical weight depending on the supplied MassScale.</td>
+</tr>
+<tr>
+<td align="left"><code>:GetCollisionEnabled()</code></td>
+<td align="left"><code>bool Enabled</code></td>
+<td align="left">Returns whether or not collision is currently enabled on the actor.</td>
+</tr>
+<tr>
+<td align="left"><code>:SetCollisionEnabled()</code></td>
+<td align="left"><code>bool Enabled</code></td>
+<td align="left">Sets whether or not collision is enabled on the actor.</td>
+</tr>
+<tr>
+<td align="left"><code>:GetSimulatePhysics()</code></td>
+<td align="left"><code>bool Enabled</code></td>
+<td align="left">Returns whether or not the object is currently simulating physics or not (frozen).</td>
+</tr>
+<tr>
+<td align="left"><code>:SetSimulatePhysics()</code></td>
+<td align="left"><code>bool Enabled</code></td>
+<td align="left">Sets if the actor should simulate physics or not.</td>
+</tr>
+<tr>
+<td align="left"><code>:GetCollisionChannel()</code></td>
+<td align="left"><code>enum ChannelType</code></td>
+<td align="left">Gets the collision channel type for the actor (which objects will collide with it).</td>
+</tr>
+<tr>
+<td align="left"><code>:SetCollisionChannel()</code></td>
+<td align="left"><code>enum ChannelType</code></td>
+<td align="left">Sets the collision channel type for the actor.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>If using <code>:SetCollisionEnabled()</code>,</strong> make sure the object is frozen unless you want it to fall through the ground. Otherwise, use <code>:SetCollisionChannel()</code> to choose which type of objects to collide with.</p>
+</div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../sound/" class="btn btn-neutral float-right" title="Sound Class">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../sound/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
+</html>

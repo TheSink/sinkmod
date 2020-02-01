@@ -8,7 +8,7 @@
   
   <meta name="author" content="TheSinkGod">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Actor Object - Sinkmod Documentation</title>
+  <title>EAS Tone - Sinkmod Documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Actor Object";
-    var mkdocs_page_input_path = "Lua\\actor.md";
-    var mkdocs_page_url = "/sinkmod/Lua/actor/";
+    var mkdocs_page_name = "EAS Tone";
+    var mkdocs_page_input_path = "Lua_Examples\\eas_tone.md";
+    var mkdocs_page_url = "/sinkmod/Lua_Examples/eas_tone/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js" defer></script>
@@ -50,23 +50,42 @@
           
             <li class="toctree-l1">
 		
-    <a class="" href="../..">Sinkmod Documentation</a>
+    <a class="" href="../..">Home</a>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Lua</span>
+    <span class="caption-text">Lua Classes</span>
     <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../Lua_Classes/actor/">Actor Class</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../Lua_Classes/sound/">Sound Class</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lua Examples</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../crate_random/">Random Crates</a>
+                </li>
                 <li class=" current">
                     
-    <a class="current" href="./">Actor Object</a>
+    <a class="current" href="./">EAS Tone</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#actor-object">Actor Object</a></li>
+    <li class="toctree-l3"><a href="#eas-tone">EAS Tone</a></li>
     
         <ul>
         
-            <li><a class="toctree-l4" href="#functions">Functions</a></li>
+            <li><a class="toctree-l4" href="#breakdown">Breakdown</a></li>
         
         </ul>
     
@@ -98,11 +117,11 @@
     
       
         
-          <li>Lua &raquo;</li>
+          <li>Lua Examples &raquo;</li>
         
       
     
-    <li>Actor Object</li>
+    <li>EAS Tone</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -112,60 +131,39 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="actor-object">Actor Object</h1>
-<p>The Actor object is returned when you spawn an actor using any spawn functions. It is an array of functions that can be run on the actor to modify or obtain information.</p>
-<h2 id="functions">Functions</h2>
-<h3 id="actor-data">Actor Data</h3>
-<pre><code class="lua">:GetActorName()
-</code></pre>
-
-<p>Returns the name of the actor. Useful when calling an actor by name or locating it in-game.</p>
-<h3 id="transformations">Transformations</h3>
-<pre><code class="lua">:GetTransform()
-</code></pre>
-
-<p>Returns the actor's location, rotation, and scale.</p>
-<pre><code class="lua">:Move(vector Location, bool Sweep, bool Teleport)
-</code></pre>
-
-<p>Moves a spawned actor to a new location.
-If <code>Sweep</code> is true, the actor will sweep to the new location triggering any collision listener along the path.
-If <code>Teleport</code> is true, the actor's current physics state and velocity will persist to the new location.</p>
-<pre><code class="lua">:Rotate(vector Rotation)
-</code></pre>
-
-<p>Rotates an actor with the specified pitch, roll, and yaw (X,Y,Z).</p>
-<pre><code class="lua">:Scale(vector Scale)
-</code></pre>
-
-<p>Sets the world scale of the actor to the specified vector.</p>
-<h3 id="physics">Physics</h3>
-<pre><code class="lua">:SetSimulatePhysics(bool Enabled)
-</code></pre>
-
-<p>Sets whether or not the actor should simulate physics. This is the easiest way to freeze an object and prevent it from moving.</p>
-<pre><code class="lua">:GetMassScale()
-Returns: vector Scale
-</code></pre>
-
-<p>Gets the current mass scale (weight).</p>
-<pre><code class="lua">:SetMassScale(vector Scale)
-</code></pre>
-
-<p>Modifies the mass scale of the actor. Can make it heavier or lighter than the default weight.</p>
-<pre><code class="lua">:GetCollisionEnabled()
-Returns: bool Enabled
-</code></pre>
-
-<p>Returns whether or not collision is currently enabled on the actor or not.</p>
-<pre><code class="lua">:SetCollisionEnabled(bool Enabled)
-</code></pre>
-
-<p>Sets whether or not collision on the actor is enabled.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Setting the collision state of the object to false when unfrozen will cause it to fall through the ground if gravity is not modified. If this not the intended behavior, make sure the object is unable to move before collision is set to false. Otherwise, change the collision type to only collide with the world or other types of objects.</p>
+                <h1 id="eas-tone">EAS Tone</h1>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
 </div>
+<p>This script is a demonstration of <em>Raw Frequency Generation</em>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="cm">--[[</span>
+<span class="cm">Title: EAS Tones</span>
+<span class="cm">Author: TheSinkGod</span>
+<span class="cm">Updated: February 1 2020</span>
+<span class="cm">Description: This example script generates two overlapping frequencies that generate the attention tone you hear at the beginning of a US emergency alert, for 2 seconds.</span>
+<span class="cm">Difficulty: 1</span>
+<span class="cm">Intended Version: Alpha 1 (Build 100)</span>
+<span class="cm">--]]</span>
+
+<span class="n">PlayRawFrequency</span><span class="p">(</span><span class="s2">&quot;sine&quot;</span><span class="p">,</span> <span class="mi">853</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+<span class="n">PlayRawFrequency</span><span class="p">(</span><span class="s2">&quot;sine&quot;</span><span class="p">,</span> <span class="mi">960</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="breakdown">Breakdown</h2>
+<ol>
+<li>Two functions are ran that play their respective sine waves for 2000 ms (2 seconds).</li>
+</ol>
               
             </div>
           </div>
@@ -174,7 +172,7 @@ Returns: bool Enabled
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="../.." class="btn btn-neutral" title="Sinkmod Documentation"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../crate_random/" class="btn btn-neutral" title="Random Crates"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -200,7 +198,7 @@ Returns: bool Enabled
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../crate_random/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
     </span>
