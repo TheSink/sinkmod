@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://thesink.github.io/sinkmod/</loc>
-     <lastmod>2020-02-01</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://thesink.github.io/sinkmod/Lua_Classes/actor/</loc>
-     <lastmod>2020-02-01</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://thesink.github.io/sinkmod/Lua_Classes/sound/</loc>
-     <lastmod>2020-02-01</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://thesink.github.io/sinkmod/Lua_Examples/crate_random/</loc>
-     <lastmod>2020-02-01</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://thesink.github.io/sinkmod/Lua_Examples/eas_tone/</loc>
-     <lastmod>2020-02-01</lastmod>
+     <lastmod>2020-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

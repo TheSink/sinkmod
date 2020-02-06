@@ -55,6 +55,14 @@
             
     <li class="toctree-l2"><a href="#sinkmod-documentation">Sinkmod Documentation</a></li>
     
+        <ul>
+        
+            <li><a class="toctree-l3" href="#what-is-sinkmod">What is Sinkmod?</a></li>
+        
+            <li><a class="toctree-l3" href="#plans-for-the-future">Plans for the Future!</a></li>
+        
+        </ul>
+    
 
     </ul>
 	    </li>
@@ -127,6 +135,37 @@
 <p>The documentation for Sinkmod is still a <strong>work-in-progress</strong>. Information may change at any moment or be entirely removed.</p>
 </div>
 <p>Welcome to the documentation for Sinkmod, it&rsquo;s in-game tools, and lua API.</p>
+<h3 id="what-is-sinkmod">What is Sinkmod?</h3>
+<p>Sinkmod is a project to create a game <em>sorta</em> like Garry&rsquo;s Mod but in Unreal Engine 4. The following features are either working or in progress:</p>
+<ul>
+<li>Import and spawning of models (FBX, OBJ, DAE, STL, or PLY)<ul>
+<li>Currently a very simple process. Obtain the model you want to import and a diffuse texture for said model (it will still import without one, but will have a missing texture material). Then, drag both into Sinkmod&rsquo;s Content/models folder, both in the same directory. Once you do that (and it&rsquo;s safe to do so while the game is running), press the refresh button in the model directory menu and the item will be automatically added and immediately importable from there.</li>
+</ul>
+</li>
+<li>Lua Scripting<ul>
+<li>Fully functional in-game editor as well as file sync (if you&rsquo;d prefer to work on scripts in another editor like VSCode)</li>
+<li>Custom API with specifically exposed functions through the use of the <a href="https://github.com/rdeioris/LuaMachine">LuaMachine</a> plugin</li>
+<li>Ability to spawn actors and play sounds from the content directory, as well as attach to some basic events (like an actor&rsquo;s Hit event)</li>
+<li>More coming soon.</li>
+</ul>
+</li>
+<li>Basic map import support<ul>
+<li>Use the UE4 editor (4.23) to create your map, and package the project for Windows 64-bit Development (NO .pak file) and drag the built map files as well as any extra needed assets to the /maps folder</li>
+<li>There will be an official tutorial on this when Alpha 1 is released</li>
+</ul>
+</li>
+<li>Tools:<ul>
+<li>Lights</li>
+<li>Ropes</li>
+<li>More coming soon.</li>
+</ul>
+</li>
+</ul>
+<h3 id="plans-for-the-future">Plans for the Future!</h3>
+<p>I want to make this a &ldquo;game&rdquo; that can suitably allow players to create large environments and reasonably complex games (or simple physics creations) with online multiplayer support. I haven&rsquo;t decided yet whether or not I want to make a system for clients to automatically download content the server is hosting (it would definitely be nice), but the bottom line is I want it to be interesting enough and easy enough to make things on that it attracts some form of interest.</p>
+<p>Whether this project is coming to Steam or staying on itch depends on how far I take it. If I feel that it becomes a high enough quality product to put onto Steam, I&rsquo;ll do so. My plan for this (if it is to happen) is to sell it on Steam for any amount under $5 (want to keep the price low) and offer a free version on itch with the catch being no Steam integration on the itch version (achievements, workshop, cloud sync). If I decide on this, the final price will <em>never</em> be made higher than my final decision. The only time it will change is when there is a sale.
+If I decide not to add it to Steam, I&rsquo;d still like to create some form of online workshop equivalent in which users can share creations and get a server listing online if at all possible.</p>
+<p>If you&rsquo;d like to view these pages in a dark theme, <strong>Dark Reader</strong> does a pretty good job. Get it for <a href="https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh">Chrome</a> or <a href="https://addons.mozilla.org/en-US/firefox/addon/darkreader/">Firefox</a>.</p>
               
             </div>
           </div>
@@ -175,5 +214,5 @@
 
 <!--
 MkDocs version : 1.0.4
-Build Date UTC : 2020-02-01 08:16:31
+Build Date UTC : 2020-02-06 06:50:57
 -->
