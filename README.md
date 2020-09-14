@@ -1,4 +1,3 @@
-![Discord Server](https://img.shields.io/discord/668791291240513536?label=Discord%20Server)
  ![Released Version](https://img.shields.io/badge/Released_Version%3A-N%2FA-green)
  ![Development Version](https://img.shields.io/badge/Development_Version%3A-Alpha_1-blue)
 
